@@ -2,6 +2,7 @@ import click
 from sayhello import app, db
 from sayhello.models import Message
 
+
 @app.cli.command()
 @click.option('--drop', is_flag=True, help='Create after drop.')
 def initdb(drop):
@@ -12,6 +13,7 @@ def initdb(drop):
         click.echo('Drop tables.')
     db.create_all()
     click.echo('Initialized database.')
+
 
 @app.cli.command()
 @click.option('--count', default=20, help='Quantity of messages, default is 20.')
